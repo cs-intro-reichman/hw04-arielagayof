@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        int[] a = {1, 3, 3, 4};
-        System.out.println(isSorted(a));
+        int[] a = {2, 8, 3, 7, 8};
+        System.out.println(secondMaxValue(a));
     }
 
      public static int findMissingInt (int [] array) {
@@ -20,24 +20,17 @@ public class ArrayOps {
 
     
 
-    public static int secondMaxValue(int [] array) {
-        int max = array[0];
-        int min = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
-            }
-        }
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-            }
-        }
-        int max2 = min;
-        for (int i = 1; i < array.length; i++) {
-            if ((array[i] > max2) && (array[i] != max)) {
+   public static int secondMaxValue(int [] array) {
+        int max = Math.max (array[0], array[1]);
+        int max2 = Math.min (array [0], array [1]);
+        for (int i = 2; i < array.length; i++){
+            if (array[i] > max2 && array [i] < max1){
                 max2 = array[i];
             }
+            if (array[i] >= max1){
+                    max2 = max1;
+                    max1 = array[i];
+                }
         }
         return max2;
     }
