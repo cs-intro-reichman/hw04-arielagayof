@@ -24,12 +24,12 @@ public class ArrayOps {
         int max = Math.max (array[0], array[1]);
         int max2 = Math.min (array [0], array [1]);
         for (int i = 2; i < array.length; i++){
-            if (array[i] > max2 && array [i] < max1){
+            if (array[i] > max2 && array [i] < max){
                 max2 = array[i];
             }
-            if (array[i] >= max1){
-                    max2 = max1;
-                    max1 = array[i];
+            if (array[i] >= max){
+                    max2 = max;
+                    max = array[i];
                 }
         }
         return max2;
